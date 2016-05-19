@@ -14,10 +14,8 @@ class RoomsController < ApplicationController
                 :return => { :funMainResult => :string },
                 :to => :fun_main
   def fun_main
-    puts "params is: #{params.inspect}"
+    logger.info "params is: #{params.inspect}"
     cmd = params[:cmd]
-    xml_doc = Nokogiri::XML.parse(cmd)
-    puts xml_doc.inspect
 
     builder = Nokogiri::XML::Builder.new(encoding: 'utf-8') do |xml|
       xml.businessdata {
