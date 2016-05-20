@@ -24,7 +24,7 @@ class RoomsController < ApplicationController
       }
     end
 
-    render :soap => {funMainResult: params[:cmd].to_s}
+    render :soap => {funMainResult: builder.to_xml.to_s}
   end
 
 
